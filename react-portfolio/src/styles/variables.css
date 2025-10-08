@@ -1,0 +1,36 @@
+:root {
+	/* === PALETA === */
+	--bg: #0b0f19;
+	--surface: #0f1424;
+	--text: #e5e7eb;
+	--muted: #9ca3af;
+
+	--primary: #8b5cf6;
+	--primary-2: #c084fc;
+	--accent: #22d3ee;
+
+	/* === GRADIENTES === */
+	--g-primary: radial-gradient(
+		60% 60% at 50% 50%,
+		rgba(139, 92, 246, 0.35) 0%,
+		rgba(12, 16, 28, 0) 70%
+	);
+	--g-accent: linear-gradient(90deg, #a020f0 0%, #ed6172 100%);
+
+	/* === TIPOGRAFÍA === */
+	--font-heading: "Sora", system-ui, sans-serif;
+	--font-body: "Inter", system-ui, sans-serif;
+
+	/* === RADIOS / SOMBRAS === */
+	--r-xl: 24px;
+	--r-lg: 16px;
+	--r-md: 12px;
+	--shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.4);
+	--shadow-glow: 0 0 40px rgba(139, 92, 246, 0.4),
+		0 0 80px rgba(192, 132, 252, 0.2);
+
+	/* === LAYOUT === */
+	--max-w: 1100px;
+	--gap: 24px;
+	--nav-h: 72px;
+}
