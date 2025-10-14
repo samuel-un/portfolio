@@ -5,6 +5,8 @@ import "./styles/layout.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Stacks from "./components/Stacks";
+import Projects from "./components/Projects";
 
 export default function App() {
 	return (
@@ -13,6 +15,8 @@ export default function App() {
 			<main>
 				<Hero />
 				<About />
+				<Stacks />
+				<Projects />
 			</main>
 		</>
 	);
