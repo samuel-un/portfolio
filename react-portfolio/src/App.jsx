@@ -7,6 +7,8 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Stacks from "./components/Stacks";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function App() {
 	return (
@@ -17,6 +19,8 @@ export default function App() {
 				<About />
 				<Stacks />
 				<Projects />
+				<Contact />
+				<Footer />
 			</main>
 		</>
 	);
