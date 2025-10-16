@@ -1,0 +1,134 @@
+{
+	"navbar": {
+		"navAria": "Navegación principal",
+		"homeAria": "Ir al inicio",
+		"home": "Inicio",
+		"about": "Sobre mí",
+		"stacks": "Tecnologías",
+		"projects": "Proyectos",
+		"contact": "Contacto"
+	},
+	"hero": {
+		"title": "Soy Samuel UN",
+		"subtitle": "Desarrollador Web Full-Stack",
+		"description": "Desarrollador Full-Stack junior, apasionado por crear aplicaciones web modernas, rápidas y bien estructuradas, especializado en Laravel y React.",
+		"cta": {
+			"cv": "Descargar CV",
+			"projects": "Ver proyectos"
+		},
+		"alt": "Foto de perfil de Samuel Utrilla"
+	},
+	"about": {
+		"title": "Sobre mí",
+		"p1": "Soy Desarrollador Full-Stack junior con formación en Desarrollo de Aplicaciones Web (DAW) y experiencia creando proyectos completos con Laravel y React.",
+		"p2": "Me apasiona construir aplicaciones modernas, rápidas y bien estructuradas, cuidando tanto la parte visual como la lógica del backend.",
+		"p3": "Actualmente sigo ampliando mis conocimientos en buenas prácticas, rendimiento y experiencia de usuario, mientras desarrollo proyectos personales y busco mi primera oportunidad profesional en el sector.",
+		"badges": {
+			"fullstack": "Desarrollo Full-Stack",
+			"webdev": "Desarrollo de aplicaciones web",
+			"teamwork": "Trabajo en equipo"
+		}
+	},
+	"stacks": {
+		"title": "Tecnologías",
+		"categories": {
+			"frontend": "Frontend",
+			"backend": "Backend",
+			"databases": "Bases de Datos",
+			"tools": "Herramientas & Otros",
+			"os": "Sistemas Operativos"
+		}
+	},
+	"projects": {
+		"title": "Mis Proyectos",
+		"featured": "Destacado",
+		"featuredAria": "Proyecto destacado",
+		"actions": {
+			"demo": "Demo",
+			"repo": "Repositorio"
+		},
+		"status": {
+			"prod": "En producción",
+			"wip": "En progreso"
+		},
+		"carousel": {
+			"prev": "Anterior",
+			"next": "Siguiente",
+			"dotsLabel": "Navegación de proyectos",
+			"dotGoTo": "Ir al grupo {{n}}"
+		},
+		"items": {
+			"nextmovie": {
+				"title": "NextMovie",
+				"desc": "Buscador de películas con catálogo, fichas y sistema de favoritos. API propia (Laravel) + frontend React. SSR/CSR híbrido, cacheo de peticiones y diseño responsivo.",
+				"alt": "Logo de NextMovie"
+			},
+			"gym-val-gym": {
+				"title": "V.A.L Gym",
+				"desc": "Plataforma para gestión de gimnasios: control de usuarios, suscripciones y pagos. Backend en Laravel con lógica centralizada de negocio.",
+				"alt": "Captura de V.A.L Gym"
+			},
+			"eye-of-the-doom": {
+				"title": "Eye of the Doom",
+				"desc": "Juego / demo interactiva “Eye of the Doom”. Puedes explorar niveles, mecánicas de juego y efectos visuales.",
+				"alt": "Captura de Eye of the Doom"
+			},
+			"collection-fast-and-furious": {
+				"title": "Collection – Fast & Furious",
+				"desc": "Proyecto coleccionable inspirado en “Fast & Furious”. Interfaz para ver, agregar y gestionar colecciones de autos, motivos personalizados.",
+				"alt": "Captura de Collection – Fast & Furious"
+			},
+			"lanzador-de-programas": {
+				"title": "Lanzador de Programas",
+				"desc": "Aplicación para gestionar y lanzar programas instalados en el equipo. Interfaz simple y funcional.",
+				"alt": "Captura de Lanzador de Programas"
+			},
+			"hotel-johnnie-walker": {
+				"title": "Hotel Johnnie Walker",
+				"desc": "Proyecto de gestión hotelera: reservas, habitaciones, servicios y administración interna.",
+				"alt": "Captura de Hotel Johnnie Walker"
+			},
+			"nexus-consulting": {
+				"title": "Nexus Consulting",
+				"desc": "Proyecto de consultoría realizado en equipo durante tus estudios DAW: prototipado de cliente, administración de proyectos y presentación institucional.",
+				"alt": "Captura de Nexus Consulting"
+			}
+		}
+	},
+	"contact": {
+		"title": "Contáctame",
+		"mailtoSubject": "Contacto desde tu portfolio",
+		"mailtoBodyPrefix": "Hola Samuel,",
+		"form": {
+			"name": "Nombre",
+			"email": "Correo electrónico",
+			"message": "Mensaje",
+			"send": "Enviar mensaje",
+			"sending": "Enviando...",
+			"sent": "Enviado ✅",
+			"mailto": "Correo personal",
+			"mailtoTitle": "Abrir tu cliente de correo",
+			"error": "Revisa los campos. Si persiste, usa “Correo personal”.",
+			"ok": "¡Gracias! Te responderé lo antes posible."
+		}
+	},
+	"footer": {
+		"aria": "Pie de página",
+		"subtitle": "Desarrollador Full-Stack · Sevilla, España",
+		"sections": {
+			"title": "Secciones",
+			"home": "Inicio",
+			"about": "Sobre mí",
+			"stacks": "Tecnologías",
+			"projects": "Mis Proyectos",
+			"contact": "Contáctame"
+		},
+		"contact": {
+			"title": "Contacto",
+			"location": "Sevilla, España",
+			"availability": "Abierto a oportunidades laborales como Desarrollador Full-Stack Junior"
+		},
+		"bottom": "© {{year}} Samuel Utrilla · Hecho con React + Vite · Deploy en Vercel",
+		"toTop": "Volver arriba"
+	}
+}

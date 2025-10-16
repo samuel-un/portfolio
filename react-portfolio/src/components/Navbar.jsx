@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const links = [
-	{ href: "#inicio", label: "Inicio" },
-	{ href: "#about", label: "Sobre mí" },
-	{ href: "#skills", label: "Skills" },
-	{ href: "#projects", label: "Proyectos" },
-	{ href: "#contact", label: "Contacto" },
+	{ href: "#inicio", key: "navbar.home", fallback: "Inicio" },
+	{ href: "#about", key: "navbar.about", fallback: "Sobre mí" },
+	{ href: "#stacks", key: "navbar.stacks", fallback: "Tecnologías" },
+	{ href: "#projects", key: "navbar.projects", fallback: "Proyectos" },
+	{ href: "#contact", key: "navbar.contact", fallback: "Contacto" },
 ];
 
 export default function Navbar() {
 	const [scrolled, setScrolled] = useState(false);
+	const { t } = useTranslation();
 
 	useEffect(() => {
 		const onScroll = () => setScrolled(window.scrollY > 10);
@@ -22,6 +25,9 @@ export default function Navbar() {
 	return (
 		<nav
 			className="navbar"
+			aria-label={t("navbar.navAria", {
+				defaultValue: "Navegación principal",
+			})}
 			style={{
 				borderBottomColor: scrolled
 					? "rgba(255,255,255,.08)"
@@ -52,7 +58,13 @@ export default function Navbar() {
 					justifyContent: "space-between",
 				}}
 			>
-				<a href="#inicio" className="brand text-gradient">
+				<a
+					href="#inicio"
+					className="brand text-gradient"
+					aria-label={t("navbar.homeAria", {
+						defaultValue: "Ir al inicio",
+					})}
+				>
 					Samuel UN
 				</a>
 
@@ -66,12 +78,13 @@ export default function Navbar() {
 										l.href === "#inicio" ? "active" : ""
 									}
 								>
-									{l.label}
+									{t(l.key, { defaultValue: l.fallback })}
 								</a>
 							</li>
 						))}
 					</ul>
 
+					{/* Separador visual */}
 					<div
 						style={{
 							width: 1,
@@ -80,6 +93,12 @@ export default function Navbar() {
 						}}
 					/>
 
+					{/* 🔘 Interruptor iOS de idioma */}
+					<div style={{ marginRight: 12 }}>
+						<LanguageSwitcher />
+					</div>
+
+					{/* Enlaces sociales */}
 					<div style={{ display: "flex", gap: 16, fontSize: 22 }}>
 						<a
 							className="social-link"

@@ -1,0 +1,134 @@
+{
+	"navbar": {
+		"navAria": "Main navigation",
+		"homeAria": "Go to home",
+		"home": "Home",
+		"about": "About",
+		"stacks": "Tech Stack",
+		"projects": "Projects",
+		"contact": "Contact"
+	},
+	"hero": {
+		"title": "I’m Samuel UN",
+		"subtitle": "Full-Stack Web Developer",
+		"description": "Junior Full-Stack Developer passionate about building modern, fast and well-structured web applications, specialized in Laravel and React.",
+		"cta": {
+			"cv": "Download CV",
+			"projects": "View projects"
+		},
+		"alt": "Profile photo of Samuel Utrilla"
+	},
+	"about": {
+		"title": "About me",
+		"p1": "I’m a junior Full-Stack Developer with a Higher National Diploma in Web Application Development (DAW) and hands-on experience building end-to-end projects with Laravel and React.",
+		"p2": "I enjoy building modern, fast and well-structured applications, taking care of both the visual layer and the backend logic.",
+		"p3": "I’m currently improving my skills in best practices, performance and user experience while developing personal projects and seeking my first professional opportunity.",
+		"badges": {
+			"fullstack": "Full-Stack Development",
+			"webdev": "Web Application Development",
+			"teamwork": "Teamwork"
+		}
+	},
+	"stacks": {
+		"title": "Tech Stack",
+		"categories": {
+			"frontend": "Frontend",
+			"backend": "Backend",
+			"databases": "Databases",
+			"tools": "Tools & Others",
+			"os": "Operating Systems"
+		}
+	},
+	"projects": {
+		"title": "Projects",
+		"featured": "Featured",
+		"featuredAria": "Featured project",
+		"actions": {
+			"demo": "Demo",
+			"repo": "Repository"
+		},
+		"status": {
+			"prod": "In production",
+			"wip": "In progress"
+		},
+		"carousel": {
+			"prev": "Previous",
+			"next": "Next",
+			"dotsLabel": "Projects navigation",
+			"dotGoTo": "Go to group {{n}}"
+		},
+		"items": {
+			"nextmovie": {
+				"title": "NextMovie",
+				"desc": "Movie finder with catalog, detail pages, and favorites. Own API (Laravel) + React frontend. Hybrid SSR/CSR, request caching, and responsive design.",
+				"alt": "NextMovie logo"
+			},
+			"gym-val-gym": {
+				"title": "V.A.L Gym",
+				"desc": "Gym management platform: users, subscriptions and payments. Laravel backend with centralized business logic.",
+				"alt": "V.A.L Gym screenshot"
+			},
+			"eye-of-the-doom": {
+				"title": "Eye of the Doom",
+				"desc": "Interactive game/demo “Eye of the Doom”. Explore levels, gameplay mechanics and visual effects.",
+				"alt": "Eye of the Doom screenshot"
+			},
+			"collection-fast-and-furious": {
+				"title": "Collection – Fast & Furious",
+				"desc": "Collectibles project inspired by “Fast & Furious”. Interface to view, add and manage car collections with custom motifs.",
+				"alt": "Collection – Fast & Furious screenshot"
+			},
+			"lanzador-de-programas": {
+				"title": "Lanzador de Programas",
+				"desc": "App to manage and launch installed programs on your machine. Simple and functional interface.",
+				"alt": "Lanzador de Programas screenshot"
+			},
+			"hotel-johnnie-walker": {
+				"title": "Hotel Johnnie Walker",
+				"desc": "Hotel management project: bookings, rooms, services and internal administration.",
+				"alt": "Hotel Johnnie Walker screenshot"
+			},
+			"nexus-consulting": {
+				"title": "Nexus Consulting",
+				"desc": "Consulting project built as a team during your DAW studies: client prototyping, project administration and institutional presentation.",
+				"alt": "Nexus Consulting screenshot"
+			}
+		}
+	},
+	"contact": {
+		"title": "Contact me",
+		"mailtoSubject": "Contact from your portfolio",
+		"mailtoBodyPrefix": "Hi Samuel,",
+		"form": {
+			"name": "Name",
+			"email": "Email",
+			"message": "Message",
+			"send": "Send message",
+			"sending": "Sending...",
+			"sent": "Sent ✅",
+			"mailto": "Write email",
+			"mailtoTitle": "Open your email client",
+			"error": "Please check the fields. If it persists, use “Write email”.",
+			"ok": "Thanks! I’ll get back to you as soon as possible."
+		}
+	},
+	"footer": {
+		"aria": "Footer",
+		"subtitle": "Full-Stack Developer · Seville, Spain",
+		"sections": {
+			"title": "Sections",
+			"home": "Home",
+			"about": "About",
+			"stacks": "Tech Stack",
+			"projects": "Projects",
+			"contact": "Contact"
+		},
+		"contact": {
+			"title": "Contact",
+			"location": "Seville, Spain",
+			"availability": "Open to job opportunities as a Junior Full-Stack Developer"
+		},
+		"bottom": "© {{year}} Samuel Utrilla · Built with React + Vite · Deployed on Vercel",
+		"toTop": "Back to top"
+	}
+}

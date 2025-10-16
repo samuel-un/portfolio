@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionTitle from "./SectionTitle";
+import { useTranslation } from "react-i18next";
 
 const sectionFade = {
 	hidden: { opacity: 0, y: 24 },
@@ -37,6 +38,7 @@ const actionsFade = {
 };
 
 export default function Contact() {
+	const { t } = useTranslation();
 	const [form, setForm] = useState({ name: "", email: "", message: "" });
 	const [status, setStatus] = useState("idle");
 
@@ -81,8 +83,10 @@ export default function Contact() {
 	};
 
 	const handleMailto = () => {
-		const subject = encodeURIComponent("Contacto desde tu portfolio");
-		const body = encodeURIComponent(`Hola Samuel,\n${form.message || ""}`);
+		const subject = encodeURIComponent(t("contact.mailtoSubject"));
+		const body = encodeURIComponent(
+			`${t("contact.mailtoBodyPrefix")}\n${form.message || ""}`
+		);
 		window.location.href = `mailto:samuelun00@gmail.com?subject=${subject}&body=${body}`;
 	};
 
@@ -94,9 +98,12 @@ export default function Contact() {
 			initial="hidden"
 			whileInView="show"
 			viewport={{ once: true, amount: 0.25 }}
+			aria-labelledby="contact-title"
 		>
 			<div className="container">
-				<SectionTitle>Contáctame</SectionTitle>
+				<SectionTitle>
+					<span id="contact-title">{t("contact.title")}</span>
+				</SectionTitle>
 
 				<div className="contact-shell">
 					<motion.form
@@ -107,6 +114,7 @@ export default function Contact() {
 						initial="hidden"
 						whileInView="show"
 						viewport={{ once: true, amount: 0.35 }}
+						aria-describedby="contact-lead"
 					>
 						{/* Nombre */}
 						<motion.label className="field" variants={fieldItem}>
@@ -119,11 +127,12 @@ export default function Contact() {
 							<input
 								type="text"
 								name="name"
-								placeholder="Nombre"
+								placeholder={t("contact.form.name")}
 								value={form.name}
 								onChange={onChange}
 								className="input"
 								autoComplete="name"
+								aria-label={t("contact.form.name")}
 							/>
 						</motion.label>
 
@@ -144,11 +153,12 @@ export default function Contact() {
 							<input
 								type="email"
 								name="email"
-								placeholder="Correo electrónico"
+								placeholder={t("contact.form.email")}
 								value={form.email}
 								onChange={onChange}
 								className="input"
 								autoComplete="email"
+								aria-label={t("contact.form.email")}
 							/>
 						</motion.label>
 
@@ -161,11 +171,12 @@ export default function Contact() {
 							</span>
 							<textarea
 								name="message"
-								placeholder="Mensaje"
+								placeholder={t("contact.form.message")}
 								rows={6}
 								value={form.message}
 								onChange={onChange}
 								className="textarea"
+								aria-label={t("contact.form.message")}
 							/>
 						</motion.label>
 
@@ -227,17 +238,17 @@ export default function Contact() {
 									)}
 								</span>
 								{status === "sending"
-									? "Enviando..."
+									? t("contact.form.sending")
 									: status === "ok"
-									? "Enviado ✅"
-									: "Enviar mensaje"}
+									? t("contact.form.sent")
+									: t("contact.form.send")}
 							</button>
 
 							<button
 								type="button"
 								className="btn btn--ghost btn-flex"
 								onClick={handleMailto}
-								title="Abrir tu cliente de correo"
+								title={t("contact.form.mailtoTitle")}
 							>
 								<span className="btn-icon" aria-hidden="true">
 									<svg viewBox="0 0 24 24">
@@ -277,11 +288,11 @@ export default function Contact() {
 										/>
 									</svg>
 								</span>
-								Correo personal
+								{t("contact.form.mailto")}
 							</button>
 						</motion.div>
 
-						{/* Estado con aparición/desaparición suave */}
+						{/* Estado */}
 						<AnimatePresence mode="wait">
 							{status === "error" && (
 								<motion.p
@@ -292,8 +303,7 @@ export default function Contact() {
 									exit={{ opacity: 0, y: -6 }}
 									transition={{ duration: 0.25 }}
 								>
-									Revisa los campos. Si persiste, usa “Correo
-									personal”.
+									{t("contact.form.error")}
 								</motion.p>
 							)}
 							{status === "ok" && (
@@ -305,7 +315,7 @@ export default function Contact() {
 									exit={{ opacity: 0, y: -6 }}
 									transition={{ duration: 0.25 }}
 								>
-									¡Gracias! Te responderé lo antes posible.
+									{t("contact.form.ok")}
 								</motion.p>
 							)}
 						</AnimatePresence>

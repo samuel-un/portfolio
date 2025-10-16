@@ -2,17 +2,20 @@ import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import { FiLayers, FiCode, FiUsers } from "react-icons/fi";
 import Badge from "./UI/Badge";
+import { useTranslation } from "react-i18next";
 
 const badges = [
-	{ label: "Desarrollo Full-Stack", icon: FiLayers },
-	{ label: "Desarrollo de aplicaciones web", icon: FiCode },
-	{ label: "Trabajo en equipo", icon: FiUsers },
+	{ key: "fullstack", icon: FiLayers },
+	{ key: "webdev", icon: FiCode },
+	{ key: "teamwork", icon: FiUsers },
 ];
 
 export default function About() {
+	const { t } = useTranslation();
+
 	return (
 		<section id="about" className="section">
-			<SectionTitle>Sobre mí</SectionTitle>
+			<SectionTitle>{t("about.title")}</SectionTitle>
 
 			<div className="container card" style={{ padding: 28 }}>
 				<motion.p
@@ -22,9 +25,7 @@ export default function About() {
 					viewport={{ once: true, amount: 0.55 }}
 					transition={{ duration: 0.5, ease: "easeOut" }}
 				>
-					Soy Desarrollador Full-Stack junior con formación en
-					Desarrollo de Aplicaciones Web (DAW) y experiencia creando
-					proyectos completos con Laravel y React.
+					{t("about.p1")}
 				</motion.p>
 
 				<motion.p
@@ -35,9 +36,7 @@ export default function About() {
 					viewport={{ once: true, amount: 0.55 }}
 					transition={{ duration: 0.5, ease: "easeOut" }}
 				>
-					Me apasiona construir aplicaciones modernas, rápidas y bien
-					estructuradas, cuidando tanto la parte visual como la lógica
-					del backend.
+					{t("about.p2")}
 				</motion.p>
 
 				<motion.p
@@ -48,10 +47,7 @@ export default function About() {
 					viewport={{ once: true, amount: 0.55 }}
 					transition={{ duration: 0.5, ease: "easeOut" }}
 				>
-					Actualmente sigo ampliando mis conocimientos en buenas
-					prácticas, rendimiento y experiencia de usuario, mientras
-					desarrollo proyectos personales y busco mi primera
-					oportunidad profesional en el sector.
+					{t("about.p3")}
 				</motion.p>
 
 				<div
@@ -60,7 +56,7 @@ export default function About() {
 				>
 					{badges.map((b, i) => (
 						<motion.span
-							key={b.label}
+							key={b.key}
 							initial={{ opacity: 0, y: 10 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true, amount: 0.6 }}
@@ -70,7 +66,9 @@ export default function About() {
 								delay: i * 0.08,
 							}}
 						>
-							<Badge icon={b.icon}>{b.label}</Badge>
+							<Badge icon={b.icon}>
+								{t(`about.badges.${b.key}`)}
+							</Badge>
 						</motion.span>
 					))}
 				</div>

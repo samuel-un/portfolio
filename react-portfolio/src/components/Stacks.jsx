@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
+import { useTranslation } from "react-i18next";
 import {
 	SiLaravel,
 	SiReact,
@@ -60,9 +61,10 @@ const techColors = {
 	Windows: "#0078D6",
 };
 
+// usamos claves i18n para las categorías
 const stacks = [
 	{
-		category: "Frontend",
+		key: "frontend",
 		items: [
 			{ icon: <SiReact />, name: "React" },
 			{ icon: <SiJavascript />, name: "JavaScript" },
@@ -74,7 +76,7 @@ const stacks = [
 		],
 	},
 	{
-		category: "Backend",
+		key: "backend",
 		items: [
 			{ icon: <SiLaravel />, name: "Laravel" },
 			{ icon: <SiPhp />, name: "PHP" },
@@ -84,7 +86,7 @@ const stacks = [
 		],
 	},
 	{
-		category: "Bases de Datos",
+		key: "databases",
 		items: [
 			{ icon: <SiMysql />, name: "MySQL" },
 			{ icon: <SiMongodb />, name: "MongoDB" },
@@ -93,7 +95,7 @@ const stacks = [
 		],
 	},
 	{
-		category: "Herramientas & Otros",
+		key: "tools",
 		items: [
 			{ icon: <SiGit />, name: "Git" },
 			{ icon: <SiGithub />, name: "GitHub" },
@@ -108,7 +110,7 @@ const stacks = [
 		],
 	},
 	{
-		category: "Sistemas Operativos",
+		key: "os",
 		items: [
 			{ icon: <SiLinux />, name: "Linux" },
 			{ icon: <FaWindows />, name: "Windows" },
@@ -127,9 +129,13 @@ const item = {
 };
 
 export default function Stacks() {
+	const { t } = useTranslation();
+
 	return (
-		<section id="stacks" className="section">
-			<SectionTitle>Mis Stacks</SectionTitle>
+		<section id="stacks" className="section" aria-labelledby="stacks-title">
+			<SectionTitle>
+				<span id="stacks-title">{t("stacks.title")}</span>
+			</SectionTitle>
 
 			<motion.div
 				className="container card stacks"
@@ -140,7 +146,7 @@ export default function Stacks() {
 			>
 				{stacks.map((group) => (
 					<motion.div
-						key={group.category}
+						key={group.key}
 						className="stack-group"
 						variants={item}
 					>
@@ -154,7 +160,7 @@ export default function Stacks() {
 								ease: [0.25, 0.1, 0.25, 1],
 							}}
 						>
-							{group.category}
+							{t(`stacks.categories.${group.key}`)}
 						</motion.h3>
 
 						<div className="stack-grid">

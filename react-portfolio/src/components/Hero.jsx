@@ -1,15 +1,19 @@
 import { motion } from "framer-motion";
 import Button from "./UI/Button";
+import { useTranslation } from "react-i18next";
 
 const AVATAR_URL =
 	"https://res.cloudinary.com/dgbngcvkl/image/upload/v1759943070/Foto-Perfil_cbibmq.png";
 
 export default function Hero() {
+	const { t } = useTranslation();
+
 	return (
 		<section
 			id="inicio"
 			className="section"
 			style={{ paddingTop: "calc(96px + var(--nav-h))" }}
+			aria-labelledby="hero-title"
 		>
 			<div
 				className="container"
@@ -22,11 +26,12 @@ export default function Hero() {
 			>
 				<div>
 					<motion.h1
+						id="hero-title"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
 					>
-						Soy Samuel UN
+						{t("hero.title")}
 					</motion.h1>
 
 					<motion.p
@@ -39,7 +44,7 @@ export default function Hero() {
 							ease: [0.25, 0.1, 0.25, 1],
 						}}
 					>
-						Desarrollador Web Full-Stack
+						{t("hero.subtitle")}
 					</motion.p>
 
 					<motion.p
@@ -49,9 +54,7 @@ export default function Hero() {
 						animate={{ opacity: 1 }}
 						transition={{ delay: 0.25, duration: 0.6 }}
 					>
-						Desarrollador Full-Stack junior, apasionado por crear
-						aplicaciones web modernas, rápidas y bien estructuradas,
-						especializado en Laravel y React.
+						{t("hero.description")}
 					</motion.p>
 
 					<motion.div
@@ -67,11 +70,11 @@ export default function Hero() {
 							rel="noopener noreferrer"
 							variant="primary"
 						>
-							Download CV
+							{t("hero.cta.cv")}
 						</Button>
 
 						<Button variant="ghost" href="#projects">
-							Ver proyectos
+							{t("hero.cta.projects")}
 						</Button>
 					</motion.div>
 				</div>
@@ -81,7 +84,7 @@ export default function Hero() {
 					initial={{ opacity: 0, scale: 0.92 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ delay: 0.15, duration: 0.6 }}
-					aria-hidden
+					aria-hidden="true"
 				>
 					<img
 						src={AVATAR_URL}

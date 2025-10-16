@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 const sectionFade = {
 	hidden: { opacity: 0, y: 24 },
@@ -7,6 +8,7 @@ const sectionFade = {
 };
 
 export default function Footer() {
+	const { t } = useTranslation();
 	const year = new Date().getFullYear();
 
 	return (
@@ -17,6 +19,7 @@ export default function Footer() {
 			initial="hidden"
 			whileInView="show"
 			viewport={{ once: true, amount: 0.25 }}
+			aria-label={t("footer.aria")}
 		>
 			<div className="container">
 				<div className="footer-card card">
@@ -29,9 +32,7 @@ export default function Footer() {
 							>
 								Samuel Utrilla
 							</a>
-							<p className="footer-sub">
-								Desarrollador Full-Stack · Sevilla, España
-							</p>
+							<p className="footer-sub">{t("footer.subtitle")}</p>
 
 							<div className="footer-social">
 								<a
@@ -65,56 +66,64 @@ export default function Footer() {
 							</div>
 						</div>
 
-						{/* Navegación rápida */}
+						{/* Quick navigation */}
 						<nav className="footer-col">
-							<h3 className="footer-heading">Secciones</h3>
+							<h3 className="footer-heading">
+								{t("footer.sections.title")}
+							</h3>
 							<ul className="footer-links">
 								<li>
-									<a href="#inicio">Inicio</a>
+									<a href="#inicio">
+										{t("footer.sections.home")}
+									</a>
 								</li>
 								<li>
-									<a href="#about">Sobre mí</a>
+									<a href="#about">
+										{t("footer.sections.about")}
+									</a>
 								</li>
 								<li>
-									<a href="#stacks">Tecnologías</a>
+									<a href="#stacks">
+										{t("footer.sections.stacks")}
+									</a>
 								</li>
 								<li>
-									<a href="#projects">Mis Proyectos</a>
+									<a href="#projects">
+										{t("footer.sections.projects")}
+									</a>
 								</li>
 								<li>
-									<a href="#contact">Contáctame</a>
+									<a href="#contact">
+										{t("footer.sections.contact")}
+									</a>
 								</li>
 							</ul>
 						</nav>
 
-						{/* Contacto */}
+						{/* Contact */}
 						<div className="footer-col">
-							<h3 className="footer-heading">Contacto</h3>
+							<h3 className="footer-heading">
+								{t("footer.contact.title")}
+							</h3>
 							<ul className="footer-meta">
 								<li>
 									<a href="mailto:samuelun00@gmail.com">
 										samuelun00@gmail.com
 									</a>
 								</li>
-								<li>Sevilla, España</li>
-								<li>
-									Abierto a oportunidades laborales como
-									Desarrollador Full-Stack Junior
-								</li>
+								<li>{t("footer.contact.location")}</li>
+								<li>{t("footer.contact.availability")}</li>
 							</ul>
 						</div>
 					</div>
 
 					<div className="footer-bottom">
-						<p>
-							© {year} <strong>Samuel Utrilla</strong> · Hecho con
-							React + Vite · Deploy en Vercel
-						</p>
+						<p>{t("footer.bottom", { year })}</p>
 						<a
 							href="#inicio"
 							className="to-top"
-							aria-label="Volver arriba"
-							title="Volver arriba"
+							aria-label={t("footer.toTop")}
+							title={t("footer.toTop")}
 						>
 							<svg viewBox="0 0 24 24" aria-hidden="true">
 								<path d="M12 19V5" />

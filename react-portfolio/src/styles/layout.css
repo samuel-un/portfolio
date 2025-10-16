@@ -1395,3 +1395,276 @@ textarea:focus-visible {
 		gap: 8px;
 	}
 }
+
+/* ========================================
+   iOS LANGUAGE SWITCHER - PORTFOLIO STYLE
+   ======================================== */
+.ios-lang-switch {
+	--switch-width: 68px;
+	--switch-height: 34px;
+	--thumb-size: 30px;
+	--thumb-offset: 2px;
+
+	position: relative;
+	width: var(--switch-width);
+	height: var(--switch-height);
+	border: none;
+	border-radius: 999px;
+	padding: 0;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+	flex-shrink: 0;
+	isolation: isolate;
+	animation: switchEntrance 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s
+		backwards;
+}
+
+.ios-lang-switch:focus {
+	outline: none;
+}
+
+.ios-lang-switch:focus-visible {
+	outline: 2px solid transparent;
+	box-shadow: 0 0 0 3px rgba(160, 32, 240, 0.5);
+	border-radius: 999px;
+}
+
+/* Track (fondo del switch) */
+.ios-lang-switch__track {
+	position: absolute;
+	inset: 0;
+	border-radius: 999px;
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.02),
+		rgba(255, 255, 255, 0.01)
+	);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	backdrop-filter: saturate(120%) blur(6px);
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 7px;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Borde animado con gradiente - estilo portfolio */
+.ios-lang-switch::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	padding: 1.5px;
+	background: linear-gradient(90deg, #a020f0, #ed6172, #a020f0);
+	background-size: 300% 100%;
+	animation: badgeBorderFlow 8s ease-in-out infinite;
+	-webkit-mask: linear-gradient(#fff 0 0) content-box,
+		linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	mask-composite: exclude;
+	pointer-events: none;
+	opacity: 0.4;
+	transition: opacity 0.3s ease;
+	z-index: 0;
+}
+
+.ios-lang-switch:hover::before {
+	opacity: 1;
+	animation-duration: 5s;
+}
+
+.ios-lang-switch:hover .ios-lang-switch__track {
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.04),
+		rgba(255, 255, 255, 0.02)
+	);
+	border-color: rgba(255, 255, 255, 0.12);
+	box-shadow: 0 0 18px rgba(237, 97, 114, 0.35),
+		0 0 28px rgba(160, 32, 240, 0.22);
+	transform: translateY(-1px);
+}
+
+/* Contenedores de banderas en el track */
+.ios-lang-switch__flag-container {
+	width: 22px;
+	height: 22px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transform: scale(0.8);
+	transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+		transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+	z-index: 1;
+}
+
+.ios-lang-switch__flag-container--left {
+	margin-left: 0;
+}
+
+.ios-lang-switch__flag-container--right {
+	margin-right: 0;
+}
+
+/* Mostrar banderas según estado - se ve el idioma al que puedes cambiar */
+.ios-lang-switch:not(.is-on) .ios-lang-switch__flag-container--right {
+	opacity: 0.75;
+	transform: scale(1);
+}
+
+.ios-lang-switch.is-on .ios-lang-switch__flag-container--left {
+	opacity: 0.75;
+	transform: scale(1);
+}
+
+.ios-lang-switch__flag-img {
+	width: 20px;
+	height: 20px;
+	border-radius: 4px;
+	object-fit: cover;
+	user-select: none;
+	-webkit-user-drag: none;
+	filter: brightness(1.15) contrast(1.08) saturate(1.1)
+		drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+	transition: filter 0.3s ease;
+}
+
+.ios-lang-switch:hover .ios-lang-switch__flag-img {
+	filter: brightness(1.2) contrast(1.1) saturate(1.15)
+		drop-shadow(0 2px 6px rgba(160, 32, 240, 0.25));
+}
+
+/* Thumb (círculo blanco vacío que tapa la bandera activa) */
+.ios-lang-switch__thumb {
+	position: absolute;
+	top: var(--thumb-offset);
+	left: var(--thumb-offset);
+	width: var(--thumb-size);
+	height: var(--thumb-size);
+	border-radius: 999px;
+	background: linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%);
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.18),
+		0 3px 1px rgba(0, 0, 0, 0.12), inset 0 -1px 1px rgba(0, 0, 0, 0.05),
+		inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+		width 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+	will-change: transform;
+	pointer-events: none;
+	z-index: 2;
+}
+
+.ios-lang-switch.is-on .ios-lang-switch__thumb {
+	transform: translateX(
+		calc(var(--switch-width) - var(--thumb-size) - var(--thumb-offset) * 2)
+	);
+}
+
+.ios-lang-switch:hover .ios-lang-switch__thumb {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.2),
+		0 4px 2px rgba(0, 0, 0, 0.15), inset 0 -1px 1px rgba(0, 0, 0, 0.05),
+		inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+		0 0 12px rgba(160, 32, 240, 0.15);
+}
+
+/* Estados hover/active */
+.ios-lang-switch:active .ios-lang-switch__thumb {
+	width: calc(var(--thumb-size) + 5px);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.15),
+		inset 0 -1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.ios-lang-switch:active:not(.is-on) .ios-lang-switch__thumb {
+	transform: translateX(0);
+}
+
+.ios-lang-switch:active.is-on .ios-lang-switch__thumb {
+	transform: translateX(
+		calc(
+			var(--switch-width) - var(--thumb-size) - var(--thumb-offset) * 2 -
+				5px
+		)
+	);
+}
+
+/* Efecto sutil al presionar */
+.ios-lang-switch:active .ios-lang-switch__track {
+	transform: scale(0.98);
+}
+
+/* Animación de entrada al cargar */
+@keyframes switchEntrance {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px) scale(0.9);
+	}
+	50% {
+		transform: translateY(2px) scale(1.05);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.ios-lang-switch,
+	.ios-lang-switch::before,
+	.ios-lang-switch__track,
+	.ios-lang-switch__thumb,
+	.ios-lang-switch__flag-container,
+	.ios-lang-switch__flag-img {
+		transition: none;
+		animation: none;
+	}
+}
+
+/* Light mode - adaptado al portfolio */
+@media (prefers-color-scheme: light) {
+	.ios-lang-switch__track {
+		background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0.04),
+			rgba(0, 0, 0, 0.02)
+		);
+		border-color: rgba(0, 0, 0, 0.08);
+	}
+
+	.ios-lang-switch:hover .ios-lang-switch__track {
+		background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0.06),
+			rgba(0, 0, 0, 0.03)
+		);
+		border-color: rgba(0, 0, 0, 0.12);
+	}
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+	.ios-lang-switch {
+		border: 1px solid CanvasText;
+	}
+
+	.ios-lang-switch::before {
+		display: none;
+	}
+
+	.ios-lang-switch__track {
+		background: Canvas;
+		box-shadow: none;
+	}
+
+	.ios-lang-switch__thumb {
+		background: ButtonFace;
+		box-shadow: 0 0 0 1px CanvasText;
+	}
+
+	.ios-lang-switch__flag-img {
+		filter: none;
+	}
+}
