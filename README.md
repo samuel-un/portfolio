@@ -27,6 +27,7 @@
 ---
 
 ## 📖 Description
+> 🌐 **Language:** English | [Español](./README.es.md)
 
 Professional personal portfolio designed to showcase my projects and skills as a **Junior Full-Stack Developer**. Combines modern design with glassmorphism, smooth animations, and high performance.
 
