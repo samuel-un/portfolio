@@ -1,6 +1,7 @@
 import "./styles/variables.css";
 import "./styles/base.css";
 import "./styles/layout.css";
+import "./styles/responsive.css";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";

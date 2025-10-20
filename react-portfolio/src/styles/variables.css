@@ -1,5 +1,4 @@
 :root {
-	/* === PALETA === */
 	--bg: #0b0f19;
 	--surface: #0f1424;
 	--text: #e5e7eb;
@@ -9,7 +8,6 @@
 	--primary-2: #c084fc;
 	--accent: #22d3ee;
 
-	/* === GRADIENTES === */
 	--g-primary: radial-gradient(
 		60% 60% at 50% 50%,
 		rgba(139, 92, 246, 0.35) 0%,
@@ -17,11 +15,16 @@
 	);
 	--g-accent: linear-gradient(90deg, #a020f0 0%, #ed6172 100%);
 
-	/* === TIPOGRAFÍA === */
 	--font-heading: "Sora", system-ui, sans-serif;
 	--font-body: "Inter", system-ui, sans-serif;
 
-	/* === RADIOS / SOMBRAS === */
+	--fs-display: clamp(2rem, 1.2rem + 3vw, 3.2rem);
+	--fs-h1: clamp(1.75rem, 1rem + 2.5vw, 2.5rem);
+	--fs-h2: clamp(1.5rem, 0.9rem + 2vw, 2rem);
+	--fs-h3: clamp(1.25rem, 0.85rem + 1.5vw, 1.5rem);
+	--fs-body: clamp(0.95rem, 0.85rem + 0.4vw, 1.05rem);
+	--fs-caption: clamp(0.8rem, 0.75rem + 0.2vw, 0.9rem);
+
 	--r-xl: 24px;
 	--r-lg: 16px;
 	--r-md: 12px;
@@ -29,8 +32,19 @@
 	--shadow-glow: 0 0 40px rgba(139, 92, 246, 0.4),
 		0 0 80px rgba(192, 132, 252, 0.2);
 
-	/* === LAYOUT === */
 	--max-w: 1100px;
 	--gap: 24px;
 	--nav-h: 72px;
+
+	--gutter: 24px;
+	--gutter-sm: 16px;
+
+	--bp-sm: 480px;
+	--bp-md: 768px;
+	--bp-lg: 1024px;
+	--bp-xl: 1280px;
+
+	--z-nav: 1000;
+	--z-overlay: 1100;
+	--z-toast: 1200;
 }

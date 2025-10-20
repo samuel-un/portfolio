@@ -28,8 +28,21 @@ export default function Projects() {
 	const { t } = useTranslation();
 	const [index, setIndex] = useState(0);
 	const [paused, setPaused] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 
-	const visible = 3;
+	// Detectar si es móvil
+	useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.innerWidth < 768);
+		};
+
+		checkMobile();
+		window.addEventListener("resize", checkMobile);
+
+		return () => window.removeEventListener("resize", checkMobile);
+	}, []);
+
+	const visible = isMobile ? 1 : 3;
 	const totalSlides = Math.max(1, projects.length - visible + 1);
 	const AUTOPLAY_MS = 8000;
 
@@ -37,6 +50,12 @@ export default function Projects() {
 		setIndex((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
 	const nextSlide = () =>
 		setIndex((prev) => (prev + 1 >= totalSlides ? 0 : prev + 1));
+
+	useEffect(() => {
+		if (index >= totalSlides) {
+			setIndex(0);
+		}
+	}, [totalSlides, index]);
 
 	useEffect(() => {
 		if (paused || totalSlides <= 1) return;
@@ -104,7 +123,6 @@ export default function Projects() {
 						viewport={{ once: true, amount: 0.25 }}
 					>
 						{projects.slice(index, index + visible).map((p, i) => {
-							// clave i18n por slug si existe; si no, cae a id
 							const key = p.slug || p.id || `p${i}`;
 							return (
 								<motion.article
@@ -245,31 +263,6 @@ export default function Projects() {
 						})}
 					</motion.div>
 
-					{/* Dots */}
-					<motion.div
-						className="carousel-dots"
-						role="tablist"
-						aria-label={t("projects.carousel.dotsLabel")}
-						variants={uiFade}
-						initial="hidden"
-						whileInView="show"
-						viewport={{ once: true, amount: 0.4 }}
-					>
-						{Array.from({ length: totalSlides }).map((_, i) => (
-							<button
-								key={i}
-								className={`dot ${i === index ? "active" : ""}`}
-								onClick={() => setIndex(i)}
-								onFocus={() => setPaused(true)}
-								onBlur={() => setPaused(false)}
-								aria-label={t("projects.carousel.dotGoTo", {
-									n: i + 1,
-								})}
-								aria-current={i === index ? "true" : "false"}
-							/>
-						))}
-					</motion.div>
-
 					{/* Flecha derecha */}
 					<motion.button
 						className="carousel-btn right"
@@ -294,6 +287,41 @@ export default function Projects() {
 						</svg>
 					</motion.button>
 				</div>
+
+				{/* Dots - Fuera del carousel */}
+				<motion.div
+					className="carousel-dots"
+					role="tablist"
+					aria-label={t("projects.carousel.dotsLabel")}
+					style={{
+						position: "relative",
+						display: "flex",
+						justifyContent: "center",
+						gap: "0.5rem",
+						marginTop: "2rem",
+						left: "auto",
+						transform: "none",
+						bottom: "auto",
+					}}
+					variants={uiFade}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, amount: 0.4 }}
+				>
+					{Array.from({ length: totalSlides }).map((_, i) => (
+						<button
+							key={i}
+							className={`dot ${i === index ? "active" : ""}`}
+							onClick={() => setIndex(i)}
+							onFocus={() => setPaused(true)}
+							onBlur={() => setPaused(false)}
+							aria-label={t("projects.carousel.dotGoTo", {
+								n: i + 1,
+							})}
+							aria-current={i === index ? "true" : "false"}
+						/>
+					))}
+				</motion.div>
 			</div>
 		</motion.section>
 	);

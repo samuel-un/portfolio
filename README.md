@@ -1,3 +1,4 @@
+
 <p align="center">
   <img src="https://res.cloudinary.com/dgbngcvkl/image/upload/v1759943070/Foto-Perfil_cbibmq.png" width="130" height="130" style="border-radius: 50%;" alt="Samuel Utrilla">
 </p>
@@ -5,134 +6,213 @@
 <h1 align="center">💻 Portfolio - Samuel Utrilla</h1>
 
 <p align="center">
-  <b>Full-Stack Web Developer (Laravel · React/Vite · MySQL · PHP · JS · JAVA)</b>
+  <b>Full-Stack Web Developer</b>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React">
+  <img src="https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
+</p>
+
+<p align="center">
+  <b>Laravel · React/Vite · MySQL · PHP · JavaScript · Java</b>
 </p>
 
 ---
 
-## 🚀 Descripción
+## 🚀 Live Demo
 
-Portfolio personal en desarrollo para mostrar mis proyectos como **Desarrollador Full-Stack Junior**, combinando diseño moderno, animaciones y rendimiento.
-
-Está construido desde cero con **React + Vite**, cuidando la estructura, animaciones suaves con **Framer Motion**, y diseño creado en **Figma**.
-
-Con el objetivo de mostrar mi trabajo, habilidades y evolución como desarrollador web.
+> 🔗 **[View Portfolio](https://url.vercel.app)**
 
 ---
 
-## 🧱 Estructura del Proyecto
+## 📖 Description
 
-```
-samuel-portfolio/
-│
-├── public/              # Archivos estáticos (favicon, CV, imágenes)
-├── src/
-│   ├── components/      # Componentes UI reutilizables (Navbar, Hero, About, etc.)
-│   ├── assets/          # (vacío, solo si se agregan recursos futuros)
-│   ├── App.jsx          # Punto principal de la app
-│   ├── main.jsx         # Render principal de React
-│   ├── site.jsx         # Configuración global del sitio
-│   ├── styles/          # CSS modularizado (base, layout, variables)
-│   └── ...
-│
-├── package.json         # Dependencias y scripts
-├── vite.config.js       # Configuración de build con Vite
-├── LICENSE              # Licencia MIT
-└── README.md            # Este archivo
-```
+Professional personal portfolio designed to showcase my projects and skills as a **Junior Full-Stack Developer**. Combines modern design with glassmorphism, smooth animations, and high performance.
+
+Built from scratch with **React 19 + Vite**, following best development practices, smooth animations with **Framer Motion**, and carefully crafted design in **Figma**.
+
+### ✨ Key Features
+
+- 🎨 **Glassmorphism design** with violet/pink gradients
+- ⚡ **Smooth animations** with Framer Motion
+- 🌐 **Bilingual** (Spanish / English) with react-i18next
+- 📱 **100% Responsive** - Mobile-first design
+- ♿ **Accessible** - WCAG best practices
+- 🎯 **Modular & reusable components**
+- 🚀 **Production-ready** optimized with Vite
+- 📧 **Functional contact form**
+- 🎪 **Project carousel** with smart autoplay
 
 ---
 
-## 🧩 Tecnologías utilizadas
+## 🧩 Technologies Used
 
-### 🖥 Frontend
-- ⚛️ **React 19 (Vite)**
-- 🎞️ **Framer Motion** (animaciones suaves y transiciones)
-- 🎨 **CSS Custom Properties + Diseño Glassmorphism**
-- 🧱 **Componentes modulares y reutilizables**
-- 📱 **Diseño responsive desde Figma**
-- 🧠 **Buenas prácticas y estructura limpia**
+### 🖥️ Frontend
 
-### 🛠 Herramientas de desarrollo
-- **Vite** para entorno rápido y build optimizado.
-- **ESLint** configurado con reglas modernas.
-- **React Icons** para iconografía limpia.
-- **Node.js 20+** recomendado.
+- ⚛️ **React 19** - Main framework
+- ⚡ **Vite 5** - Build tool & dev server
+- 🎞️ **Framer Motion** - Animations and transitions
+- 🌐 **react-i18next** - Internationalization
+- 🎨 **CSS Custom Properties** - Native CSS variables
+- 🎯 **React Icons** - Modern iconography
+- 🧱 **Modular architecture** - Reusable components
+
+### 🛠️ Development Tools
+
+- **Node.js 20+** - Runtime environment
+- **ESLint** - Linter with modern rules
+- **Git** - Version control
+- **Figma** - UI/UX design
+- **Vercel** - Hosting & deployment
 
 ---
 
-## 💾 Instalación y uso local
+## 📸 Screenshots
+
+### Desktop
+
+<p align="center">
+	<img src="https://res.cloudinary.com/dgbngcvkl/image/upload/v1760982534/escritorio-1_z07d01.png" width="800">
+	<img src="https://res.cloudinary.com/dgbngcvkl/image/upload/v1760982534/escritorio-2_lnsf6r.png" width="800">
+	<img src="https://res.cloudinary.com/dgbngcvkl/image/upload/v1760982534/escritorio-3_gtlmjq.png" width="800">
+	<img src="https://res.cloudinary.com/dgbngcvkl/image/upload/v1760982534/escritorio-4_wpe8nb.png" width="800">
+	<img src="https://res.cloudinary.com/dgbngcvkl/image/upload/v1760982535/escritorio-5_nga7xl.png" width="800">
+</p>
+
+### Mobile
+
+<p align="center">
+	<img src="https://res.cloudinary.com/dgbngcvkl/image/upload/v1760982127/iPhone-13-1_zmdbis.png" width="250">
+	<img src="https://res.cloudinary.com/dgbngcvkl/image/upload/v1760982277/iPhone-13-2_cxmvai.png" width="250">
+	<img src="https://res.cloudinary.com/dgbngcvkl/image/upload/v1760982127/iPhone-13-3_fywpjo.png" width="250">
+	<img src="https://res.cloudinary.com/dgbngcvkl/image/upload/v1760982127/iPhone-13-4_zbtai4.png" width="250">
+	<img src="https://res.cloudinary.com/dgbngcvkl/image/upload/v1760982128/iPhone-13-5_wvlzxx.png" width="250">
+	<img src="https://res.cloudinary.com/dgbngcvkl/image/upload/v1760982127/iPhone-13-6_ftcu2n.png" width="250">
+</p>
+
+---
+
+## ✅ Current Status (v1.0)
+
+- ✅ Complete structure: Navbar, Hero, About, Stacks, Projects, Contact, Footer
+- ✅ Glassmorphism design with gradients and visual effects
+- ✅ Framer Motion animation system implemented
+- ✅ Functional carousel with autoplay and hover/touch pause
+- ✅ Contact form + mailto option
+- ✅ Fully functional ES/EN internationalization
+- ✅ Responsive design validated across multiple devices
+- ✅ Organized and documented code
+- ✅ SEO & performance optimized
+
+---
+
+## 🧭 Local Installation
+
+### Prerequisites
+
+- Node.js 20+ and npm installed
+- Git installed
+
+### Steps
 
 ```bash
-# Clonar el repositorio
+# 1. Clone the repository
 git clone https://github.com/samuel-un/portfolio.git
+cd portfolio
 
-# Entrar en el proyecto
-cd samuel-portfolio
-
-# Instalar dependencias
+# 2. Install dependencies
 npm install
 
-# Iniciar el entorno de desarrollo
+# 3. Start development server
 npm run dev
+
+# 4. Open in browser
+# http://localhost:5173
 ```
 
-La aplicación se abrirá en: [http://localhost:5173](http://localhost:5173)
+---
+
+## 🧱 Project Structure
+
+```
+react-portfolio/
+├── public/
+│   └── Samuel_Utrilla_CV.pdf       # Downloadable CV
+├── src/
+│   ├── components/                  # React components
+│   │   ├── Navbar/
+│   │   ├── Hero/
+│   │   ├── About/
+│   │   ├── Projects/
+│   │   ├── Contact/
+│   │   ├── Footer/
+│   │   └── UI/                      # Shared components
+│   ├── data/                        # Static data
+│   │   ├── projects.js
+│   │   └── skills.js
+│   ├── i18n/                        # Internationalization
+│   │   ├── index.js
+│   │   └── locales/
+│   │       ├── es/
+│   │       └── en/
+│   ├── styles/                      # Global styles
+│   │   ├── variables.css
+│   │   ├── base.css
+│   │   ├── layout.css
+│   │   └── responsive.css
+│   ├── App.jsx                      # Main component
+│   └── main.jsx                     # Entry point
+├── package.json
+├── vite.config.js
+├── eslint.config.js
+├── README.md
+└── LICENSE
+```
 
 ---
 
-## 🧠 Componentes principales
+## 🌐 Internationalization
 
-| Componente | Descripción |
-|-------------|-------------|
-| **Navbar** | Navegación con animaciones, gradientes y efectos dinámicos. |
-| **Hero** | Sección principal con presentación, foto y descarga del CV. |
-| **About** | Presentación personal, animaciones de texto y badges interactivos. |
-| **Badges** | Botones animados con borde degradado y efecto translúcido. |
-| **Button** | Sistema modular de botones (`primary` y `ghost`). |
-| **SectionTitle** | Encabezado animado para cada bloque de contenido. |
+The portfolio includes full support for Spanish and English.
 
----
+### How it works
 
-## ✨ Características destacadas
+1. **Configuration** in `src/i18n/index.js`
+2. **Translations** in `src/i18n/locales/{es,en}/common.json`
+3. **Initialization** in `main.jsx`
+4. **Usage in components**:
 
-- 🌈 **Gradientes animados** y coherencia visual.
-- 🪶 **Animaciones con Framer Motion** (entrada, desplazamiento, hover).
-- 💎 **Glassmorphism UI** con transparencias y sombras suaves.
-- ⚙️ **Código modular y semántico**, listo para ampliar con secciones como *Skills* o *Proyectos*.
-- 🧾 **Descarga directa del CV** (configurable en `/public/Samuel_Utrilla_CV.pdf`).
+```jsx
+import { useTranslation } from "react-i18next";
 
----
+function Component() {
+	const { t } = useTranslation();
+	return <h1>{t("hero.title")}</h1>;
+}
+```
 
-## 🧪 Estado del proyecto
-
-🔧 **Versión actual:** 0.6 (en desarrollo)
-
-- [x] Diseño base del portfolio (Navbar, Hero, About)
-- [x] Sistema de gradientes y animaciones
-- [x] Descarga de CV funcional
-- [ ] Sección “Proyectos” en desarrollo
-- [ ] Integración con EmailJS para el formulario de contacto
-- [ ] Optimización SEO y despliegue en Vercel
+5. **Language switching**: `LanguageSwitcher` handles switching and persists the preference in `localStorage`
 
 ---
 
-## 🧑‍💻 Autor
+## 🧑‍💻 Author
 
-**Samuel Utrilla**  
-📍 Sevilla, España  
-🎯 *Full-Stack Web Developer (Laravel & React)*  
-🔗 [LinkedIn](https://www.linkedin.com/in/samuel-un/)  
-🔗 [GitHub](https://github.com/samuel-un)
+**Samuel Utrilla**
+
+📍 Seville, Spain  
+🎯 Full-Stack Web Developer (Laravel & React)  
+💼 Seeking opportunities as a junior developer
+
+### Connect with me
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/samuel-un/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/samuel-un)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://your-vercel-url.vercel.app)
 
 ---
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está licenciado bajo la **MIT License**.  
-Consulta el archivo [LICENSE](./LICENSE) para más información.
-
----
-
-> 🧠 **Nota:**  
-> Este portfolio está en constante mejora, siguiendo buenas prácticas de desarrollo, animaciones coherentes y estructura escalable para futuros apartados (Mis Stacks, Mis Skills, Mis Proyectos y Contacto).
+This project is licensed under the **MIT License**.  
+See the [LICENSE](./LICENSE) file for details.

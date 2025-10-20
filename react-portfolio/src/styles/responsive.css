@@ -1,0 +1,641 @@
+/* =========================================================
+   Responsive CSS – Limpio y Optimizado
+   ========================================================= */
+
+/* --- 0) Configuración Global y Media --- */
+@media (max-width: 1024px) {
+	html,
+	body {
+		overflow-x: clip;
+		width: 100%;
+	}
+	img,
+	svg,
+	video,
+	canvas {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/* --- 1) Contenedores, Gutters y Bloques --- */
+@media (max-width: 1024px) {
+	.section {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.container {
+		box-sizing: border-box;
+		padding-left: calc(20px + env(safe-area-inset-left)) !important;
+		padding-right: calc(20px + env(safe-area-inset-right)) !important;
+		margin-inline: auto;
+		max-width: 100%;
+	}
+
+	/* Bloques Contenidos (Cards, Panels) */
+	.glass,
+	.panel,
+	.card,
+	.about .about-card,
+	.stacks .stacks-panel,
+	.projects .project-card,
+	.contact .contact-form,
+	.footer .footer-card {
+		width: calc(100% - 40px) !important;
+		max-width: 720px;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+}
+
+@media (max-width: 768px) {
+	/* Ajuste de bloques en 768px */
+	.glass,
+	.panel,
+	.card,
+	.about .about-card,
+	.stacks .stacks-panel,
+	.projects .project-card,
+	.contact .contact-form,
+	.footer .footer-card {
+		max-width: 640px;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding-left: calc(16px + env(safe-area-inset-left)) !important;
+		padding-right: calc(16px + env(safe-area-inset-right)) !important;
+	}
+
+	/* Ajuste de bloques en 480px */
+	.glass,
+	.panel,
+	.card,
+	.about .about-card,
+	.stacks .stacks-panel,
+	.projects .project-card,
+	.contact .contact-form,
+	.footer .footer-card {
+		width: calc(100% - 32px) !important;
+		max-width: 604px;
+	}
+}
+
+/* --- 2) Espaciados Verticales de Secciones --- */
+@media (max-width: 768px) {
+	.section {
+		padding-block: 64px;
+	}
+	#about {
+		padding-top: 80px !important;
+		padding-bottom: 48px !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.section {
+		padding-block: 52px;
+	}
+	#about {
+		padding-top: 72px !important;
+		padding-bottom: 40px !important;
+	}
+}
+
+/* --- 3) HERO (#inicio) --- */
+@media (max-width: 768px) {
+	#inicio {
+		padding-top: 48px !important;
+		overflow: hidden;
+	}
+	#inicio .container {
+		row-gap: 24px;
+	}
+	#inicio h1 {
+		margin-top: 0 !important;
+		text-align: center;
+	}
+	#inicio .subtitle {
+		margin-top: 12px !important;
+		text-align: center;
+		max-width: 32ch;
+		margin-inline: auto;
+	}
+	#inicio .btn-row {
+		margin-top: 24px !important;
+		gap: 12px;
+		justify-content: center;
+	}
+	#inicio .avatar-wrap {
+		margin-top: 32px !important;
+		margin-bottom: 24px !important;
+		transform: scale(0.9);
+		transform-origin: top center;
+	}
+	#inicio::before,
+	#inicio::after,
+	#inicio .glow,
+	#inicio .radial,
+	#inicio .hero-bg {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100dvw;
+		max-width: 100dvw;
+	}
+}
+
+/* --- 4) ABOUT (compacto) --- */
+@media (max-width: 768px) {
+	.about .about-card {
+		padding: 28px 24px;
+	}
+	.about .btn-row,
+	.about .badges,
+	.about .badge-list {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 12px;
+	}
+	.badge-glass {
+		padding: 0.8rem 1rem;
+	}
+	.badge__label {
+		font-size: 0.95rem;
+	}
+	.badge__icon {
+		width: 22px;
+		height: 22px;
+	}
+}
+
+@media (max-width: 480px) {
+	.about .about-card {
+		padding: 24px 20px;
+	}
+}
+
+/* --- 5) STACKS (Grilla) --- */
+@media (max-width: 1024px) {
+	.stacks {
+		padding: 1.25rem 1rem 1.75rem;
+		gap: 1.25rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.stack-grid {
+		grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+		gap: 0.6rem;
+	}
+	.stack-item {
+		padding: 0.75rem 0.45rem;
+	}
+	.stack-item span {
+		font-size: 0.8rem;
+	}
+	.stack-icon {
+		font-size: 1.7rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.stack-grid {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 0.5rem;
+	}
+	.stack-item {
+		padding: 0.65rem 0.35rem;
+	}
+	.stack-item span {
+		font-size: 0.75rem;
+	}
+	.stack-icon {
+		font-size: 1.5rem;
+	}
+}
+
+/* --- 6) PROJECTS (Carrusel) --- */
+@media (max-width: 1024px) {
+	.carousel {
+		padding: 0 20px 32px;
+		max-width: 100%;
+		overflow: visible;
+	}
+	.carousel-track {
+		overflow-x: auto;
+		overflow-y: visible;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+	}
+	.carousel-track::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.carousel {
+		padding: 0 20px 30px;
+	}
+	.carousel-track {
+		gap: 16px;
+		margin: 0;
+		padding: 0 10px;
+	}
+	.carousel-track .project-card {
+		flex: 0 0 85%;
+		max-width: 480px;
+		scroll-snap-align: center;
+		margin: 0;
+	}
+	.project-thumb {
+		height: 200px;
+	}
+	.project-actions .btn-flex {
+		height: 44px;
+	}
+	.carousel-prev,
+	.carousel-next {
+		width: 48px;
+		height: 48px;
+		z-index: 10;
+	}
+	.carousel-prev {
+		left: 8px;
+	}
+	.carousel-next {
+		right: 8px;
+	}
+}
+
+@media (max-width: 480px) {
+	.carousel {
+		padding: 0 16px 28px;
+	}
+	.carousel-track {
+		gap: 12px;
+		padding: 0 8px;
+	}
+	.carousel-track .project-card {
+		flex: 0 0 90%;
+		max-width: 380px;
+	}
+	.project-thumb {
+		height: 180px;
+	}
+	.carousel-prev {
+		left: 4px;
+	}
+	.carousel-next {
+		right: 4px;
+	}
+}
+
+.carousel-dots {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.carousel-dots .dot {
+	width: 11px;
+	height: 11px;
+}
+
+/* --- 7) CONTACTO (Formulario) --- */
+@media (max-width: 768px) {
+	.contact-form {
+		padding: 16px;
+	}
+	.contact-actions .btn {
+		min-width: 100%;
+	}
+	.contact-form textarea {
+		min-height: 140px;
+	}
+}
+
+/* --- 8) Tipografía Fluida (Solo Móvil) --- */
+@media (max-width: 768px) {
+	h1 {
+		font-size: var(--fs-h1);
+	}
+	h2 {
+		font-size: var(--fs-h2);
+	}
+	h3 {
+		font-size: var(--fs-h3);
+	}
+	p,
+	li {
+		font-size: var(--fs-body);
+	}
+}
+
+/* ========================================
+   FOOTER - Estilos Responsive
+   ======================================== */
+
+/* --- FOOTER Ultra-Minimalista (<= 768px) --- */
+@media (max-width: 768px) {
+	.footer-card {
+		padding: 32px 24px 24px;
+	}
+
+	.footer-grid {
+		display: flex !important;
+		flex-direction: column;
+		align-items: center;
+		gap: 0;
+		text-align: center;
+	}
+
+	/* Sección 1: Brand + Redes Sociales */
+	.footer-grid > div:first-child {
+		display: flex !important;
+		flex-direction: column;
+		align-items: center;
+		gap: 12px;
+		width: 100%;
+		max-width: 100%;
+		padding-bottom: 18px;
+	}
+
+	.footer-brand {
+		font-size: 1.6rem;
+		margin-bottom: 0;
+	}
+
+	.footer-sub {
+		margin-top: 0;
+		font-size: 0.85rem;
+		color: #9aa4b2;
+		max-width: 32ch;
+		line-height: 1.4;
+	}
+
+	.footer-social {
+		margin-top: 2px;
+		justify-content: center;
+		gap: 12px;
+		padding-bottom: 16px;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+		width: 100%;
+		max-width: 300px;
+	}
+
+	/* Sección 2: Navegación (Links) */
+	.footer-grid > nav:nth-child(2),
+	.footer-grid > div:nth-child(2) {
+		display: flex !important;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		padding-top: 18px;
+		padding-bottom: 14px;
+		gap: 6px;
+	}
+
+	.footer-col .footer-heading,
+	.footer-grid > nav .footer-heading,
+	.footer-grid > div:nth-child(2) .footer-heading {
+		font-size: 0.95rem;
+		margin-bottom: 8px;
+		margin-top: 0;
+		color: #fff;
+		font-weight: 700;
+	}
+
+	.footer-col .footer-links,
+	.footer-grid > nav .footer-links,
+	.footer-grid > div:nth-child(2) .footer-links {
+		display: grid !important;
+		grid-template-columns: repeat(3, 1fr) !important;
+		gap: 8px 10px !important;
+		max-width: 380px;
+		width: 100%;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		padding-bottom: 16px;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	}
+
+	.footer-col .footer-links li,
+	.footer-grid > nav .footer-links li,
+	.footer-grid > div:nth-child(2) .footer-links li {
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
+
+	.footer-col .footer-links a,
+	.footer-grid > nav .footer-links a,
+	.footer-grid > div:nth-child(2) .footer-links a {
+		display: inline-block;
+		padding: 8px 10px !important;
+		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.04);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		font-size: 0.8rem !important;
+		color: #cbd5e1;
+		text-decoration: none;
+		transition: all 0.2s ease;
+		width: 100%;
+		text-align: center;
+	}
+
+	.footer-col .footer-links a:hover,
+	.footer-grid > nav .footer-links a:hover,
+	.footer-grid > div:nth-child(2) .footer-links a:hover {
+		background: rgba(255, 255, 255, 0.08);
+		border-color: rgba(255, 255, 255, 0.15);
+		color: #fff;
+		transform: translateY(-1px);
+	}
+
+	/* Sección 3: Contacto Footer */
+	.footer-grid > div:nth-child(3) {
+		display: flex !important;
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+		padding-top: 18px;
+		width: 100%;
+		max-width: 340px;
+	}
+
+	.footer-grid > div:nth-child(3) .footer-heading {
+		font-size: 0.95rem;
+		margin-bottom: 6px;
+		margin-top: 0;
+		color: #fff;
+		font-weight: 700;
+	}
+
+	.footer-grid > div:nth-child(3) .footer-meta {
+		gap: 10px;
+		font-size: 0.85rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.footer-grid > div:nth-child(3) .footer-meta li {
+		padding: 2px 0;
+		color: #cbd5e1;
+	}
+
+	.footer-grid > div:nth-child(3) .footer-meta a {
+		color: #cbd5e1;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.footer-grid > div:nth-child(3) .footer-meta a:hover {
+		color: #fff;
+	}
+
+	/* Bottom simplificado */
+	.footer-bottom {
+		flex-direction: column-reverse !important;
+		gap: 16px !important;
+		margin-top: 22px;
+		padding-top: 20px;
+		text-align: center;
+		font-size: 0.82rem;
+	}
+
+	.footer-bottom p {
+		color: #9aa4b2;
+		line-height: 1.6;
+	}
+
+	.to-top {
+		margin: 0 !important;
+		width: 44px;
+		height: 44px;
+	}
+
+	.to-top svg {
+		width: 18px;
+		height: 18px;
+	}
+}
+
+/* --- FOOTER para Pantallas Pequeñas (<= 480px) --- */
+@media (max-width: 480px) {
+	.footer-card {
+		padding: 28px 20px 20px;
+	}
+
+	.footer-grid > div:first-child {
+		gap: 10px;
+		padding-bottom: 16px;
+	}
+
+	.footer-brand {
+		font-size: 1.4rem;
+	}
+
+	.footer-sub {
+		font-size: 0.8rem;
+	}
+
+	.footer-social {
+		gap: 10px;
+		max-width: 260px;
+		padding-bottom: 14px;
+	}
+
+	.social-pill {
+		width: 36px;
+		height: 36px;
+	}
+
+	.social-pill svg {
+		width: 17px;
+		height: 17px;
+	}
+
+	.footer-grid > nav,
+	.footer-grid > div:nth-child(2) {
+		padding-top: 16px;
+		padding-bottom: 14px;
+		gap: 4px;
+	}
+
+	.footer-col .footer-heading,
+	.footer-grid > nav .footer-heading,
+	.footer-grid > div:nth-child(2) .footer-heading {
+		margin-bottom: 6px;
+		margin-top: 0;
+		font-size: 0.9rem;
+	}
+
+	.footer-col .footer-links,
+	.footer-grid > nav .footer-links,
+	.footer-grid > div:nth-child(2) .footer-links {
+		gap: 7px 8px !important;
+		max-width: 360px;
+		padding-bottom: 14px;
+	}
+
+	.footer-col .footer-links a,
+	.footer-grid > nav .footer-links a,
+	.footer-grid > div:nth-child(2) .footer-links a {
+		padding: 7px 9px !important;
+		font-size: 0.75rem !important;
+	}
+
+	.footer-grid > div:nth-child(3) {
+		max-width: 300px;
+		padding-top: 16px;
+		gap: 6px;
+	}
+
+	.footer-grid > div:nth-child(3) .footer-heading {
+		font-size: 0.9rem;
+		margin-bottom: 4px;
+		margin-top: 0;
+	}
+
+	.footer-grid > div:nth-child(3) .footer-meta {
+		gap: 8px;
+		font-size: 0.8rem;
+	}
+
+	.footer-bottom {
+		gap: 14px !important;
+		margin-top: 18px;
+		padding-top: 18px;
+		font-size: 0.78rem;
+	}
+
+	.to-top {
+		width: 40px;
+		height: 40px;
+	}
+
+	.to-top svg {
+		width: 16px;
+		height: 16px;
+	}
+}
+
+/* --- FOOTER para Pantallas Muy Pequeñas (<= 360px) --- */
+@media (max-width: 360px) {
+	.footer-col .footer-links,
+	.footer-grid > nav .footer-links,
+	.footer-grid > div:nth-child(2) .footer-links {
+		grid-template-columns: 1fr !important;
+		max-width: 200px;
+	}
+}
