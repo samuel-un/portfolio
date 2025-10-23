@@ -51,8 +51,7 @@ export default function About() {
 				</motion.p>
 
 				<div
-					className="mt-6"
-					style={{ display: "flex", flexWrap: "wrap", gap: 12 }}
+					className="mt-6 badges"
 				>
 					{badges.map((b, i) => (
 						<motion.span
